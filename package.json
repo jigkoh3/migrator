@@ -1,0 +1,18 @@
+{
+  "name": "migratorv1",
+  "version": "0.0.1",
+  "description": "migrator for csv file to database",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@prisma/client": "^3.6.0",
+    "csvtojson": "^2.0.10"
+  },
+  "devDependencies": {
+    "prisma": "^3.6.0"
+  }
+}

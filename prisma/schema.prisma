@@ -1,0 +1,81 @@
+// This is your Prisma schema file String
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model raw_router {
+  id            Int    @id @default(autoincrement())
+  sitecode      String
+  nodename      String
+  model         String
+  loopback_id   String
+  router_id     String
+  menagement_ip String
+  node_type     String
+  region        String
+  vendor        String
+}
+
+model raw_list_chain {
+  id                        Int    @id @default(autoincrement())
+  region                    String
+  chain_name                String
+  chain_id                  String
+  node_type                 String
+  node_name                 String
+  top_interface             String
+  top_interface_description String
+  top_ip                    String
+  bot_interface             String
+  bot_interface_description String
+  bot_ip                    String
+  chain_type                String
+  upe1                      String
+  upe2                      String
+}
+
+model raw_interface_master {
+  id                    Int    @id @default(autoincrement())
+  hostname              String
+  port                  String
+  unit                  String
+  interface_name        String
+  interface_description String
+  service_instance      String
+  channel_group_type    String
+  channel_group_id      String
+  channel_group_mode    String
+  vlan_type             String
+  vlan_layer            String
+  vlan_id               String
+  inner_vlan_id         String
+  ip_address            String
+  admin_status          String
+  bridge_domain         String
+  split_horizon         String
+}
+
+model raw_l2vpn {
+  id                   Int    @id @default(autoincrement())
+  host_name            String
+  l2vpn_type           String
+  group                String
+  instance             String
+  name                 String
+  instance_description String
+  interface            String
+  neighbor             String
+  pw_id                String
+  nieghbor_status      String
+  vfi_name             String
+  vfi_neighbor         String
+  vfi_pw_id            String
+  routed_interface     String
+}
