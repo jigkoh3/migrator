@@ -1,4 +1,4 @@
-const csvFilePath = './ONE_DB/BKK/Cisco/interface_master_BKK.csv'
+const csvFilePath = './ONE_DB/NER/Cisco/interface_master_NER.csv'
 const csv = require('csvtojson')
 
 const { PrismaClient } = require('@prisma/client');
@@ -11,9 +11,9 @@ const main = async () => {
         delete data.field1;
         return data;
     })
-    for (let index = 0; index < mirateData.length; index += 5000) {
+    for (let index = 0; index < mirateData.length; index += 50000) {
 
-        const limit = index < mirateData.length ? 5000 : index - mirateData.length;
+        const limit = index < mirateData.length ? 50000 : index - mirateData.length;
         const slideData = mirateData.slice(index, index + limit);
         // console.log(slideData);
         const migrator = await prisma.raw_interface_master.createMany({ data: mirateData });

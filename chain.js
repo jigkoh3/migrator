@@ -1,4 +1,4 @@
-const csvFilePath = './ONE_DB/BKK/Cisco/list_chain_BKK.csv'
+const csvFilePath = './ONE_DB/NER/Cisco/list_chain_NER.csv'
 const csv = require('csvtojson')
 
 const { PrismaClient } = require('@prisma/client');
